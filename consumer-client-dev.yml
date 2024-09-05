@@ -7,3 +7,14 @@ spring:
     
 name: consumer-client-dev
 
+resilience4j: 
+ ratelimiter:
+  configs:
+   default:
+    limitForPeriod: 1 # The maximum number of requests allowed in one refresh period
+    limitRefreshPeriod: 1s # The limiter refreshes every limitRefreshPeriod, resetting the maximum number of allowed requests to limitForPeriod
+    timeoutDuration: 1 # The default waiting time for threads waiting for permission
+  instances:
+   payment-serv:
+    baseConfig: default
+profile-env: DEV
