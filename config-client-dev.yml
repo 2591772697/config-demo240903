@@ -1,11 +1,11 @@
 server:
-  port: 8803
+  port: 8802
 
 spring:
   application:
     name: config-client
     
-name: config-client-dev-update
+name: config-client-dev
 
 # resilience4j: 
 #  ratelimiter:
